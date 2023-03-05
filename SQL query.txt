@@ -1,0 +1,23 @@
+1.How to fetch 3rd highest salary using Rank function
+
+SELECT salary FROM (
+  SELECT salary, RANK() OVER (ORDER BY salary DESC) AS rank
+  FROM employee
+) AS t
+WHERE rank = 3;
+
+2.What is Query to display first 5 Records from
+Employee table?
+
+SELECT * FROM Employee WHERE ROWNUM <= 5;
+
+3.How do we use the DISTINCT statement? What are its use?
+
+SELECT DISTINCT column1, column2
+FROM myTable;
+The DISTINCT keyword can be useful for various purposes, such as:
+
+Finding unique values in a column or combination of columns
+Eliminating duplicate values from a result set
+Grouping data based on unique values
+Counting the number of unique values in a column or combination of columns
